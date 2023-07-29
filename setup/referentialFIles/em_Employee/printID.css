@@ -1,0 +1,62 @@
+
+.myid{
+    width: 100%  !important;
+    max-width: 600px !important;
+    height: 400px !important;
+    border: solid 2px #333  !important;
+    border-radius: 10px  !important;
+    margin: 10px auto  !important;
+    padding-bottom: 10px  !important;
+}
+
+.myid #top{
+    height: auto  !important;
+    padding: 1vw  !important;
+}
+
+.myid #top h1{
+    font-size: 2.5vw  !important;  !important;
+    margin: 0px  !important;
+    color: #333  !important;
+}
+
+.myid #title{
+    font-size: 3.5vw  !important;
+    font-weight: bold  !important;
+    color: #FFF  !important;
+    border-top: solid 2px #333  !important;
+    border-bottom: solid 2px #333  !important;
+    text-align: center  !important;
+    background: #333  !important;
+    padding: 1vw  !important;
+}
+
+.myid h2{
+    font-size: 2vw  !important;
+    font-weight: normal  !important;
+    color: #333  !important;
+    margin: 0px  !important;
+}
+
+.myid h3{
+    font-size: 2vw  !important;
+    font-weight: normal  !important;
+    color: #666  !important;
+    margin: 0px  !important;
+}
+
+.verify{
+    margin: 20px auto  !important;
+    text-align: center  !important;
+}
+
+.verify h1{
+    font-size: 20px  !important;
+    color: #666  !important;
+}
+
+#myid {
+  
+}
+
+#divPrint{width: 600px !important;height: 400px !important;}

@@ -1,0 +1,4 @@
+Options -Indexes
+
+ErrorDocument 404 "<H1 align='center'><br><br>404: Oops! Sorry we can't find the page you are looking.</H1>"
+ErrorDocument 403 "<H1 align='center'><br><br>403: FORBIDDEN!<br>You don't have enough access to this directory.</H1>"

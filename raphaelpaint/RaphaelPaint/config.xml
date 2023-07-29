@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/RaphaelPaint" version="1.0.0" viewmodes="maximized">
+    <tizen:application id="ciwFcjfpEi.RaphaelPaint" package="ciwFcjfpEi" required_version="2.1"/>
+    <author email="z.szymanska@samsung.com">Zaneta Szymanska</author>
+    <content src="index.html"/>
+    <icon src="icon.png"/>
+    <name>RaphaelPaint</name>
+    <tizen:setting screen-orientation="portrait" context-menu="enable" background-support="enable" encryption="disable" install-location="auto"/>
+</widget>

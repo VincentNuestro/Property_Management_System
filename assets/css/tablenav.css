@@ -1,0 +1,13 @@
+/* CSS Document */
+
+.highlighted
+{
+	background: #666 !important;
+	color: #FFF !important;
+}
+
+.activated
+{
+	background: #06F !important;
+	color: #FFF !important;
+}
