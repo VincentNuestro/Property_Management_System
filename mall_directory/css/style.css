@@ -1,0 +1,316 @@
+body
+{
+	font-family: Open Sans Regular;
+	overflow-x: hidden;
+	background: #FFF;
+}
+
+.main-title
+{
+	font-size: 20px;
+	font-weight: 300;
+	color: #FFF;
+	padding: 15px;
+	margin: 0px;
+	background: #009cae;
+	border-bottom: solid 1px #dddddd;
+}
+
+.referential
+{ margin: 15px; }
+
+.referential .nav-tabs
+{ margin-bottom: 15px; }
+
+.referential .nav-tabs li a
+{ color: #666; }
+
+.referential .nav-tabs li.active a
+{
+	border-radius: 0px;
+	border-top: solid 2px #F00;
+	color: #333;
+	font-weight: 600;
+}
+
+.mini-title
+{
+	font-size: 15px;
+	font-weight: 400;
+	color: #666;
+	padding: 10px;
+	padding-top: 5px;
+	margin: 0px;
+}
+
+.categories .panel
+{ border-radius: 0px; }
+
+.categories .panel .panel-title
+{ font-size: 14px; }
+
+.categories .panel :hover
+{ text-decoration: none; }
+
+.categories .panel .panel-body h5
+{
+	font-weight: 400;
+	color: #666;
+	padding: 5px;
+	border-bottom: solid 1px #dddddd;
+}
+
+.categories .panel .panel-body .list-group-item
+{
+	border-radius: 0px;
+	border: none;
+	padding: 5px;
+}
+
+.categories .panel .panel-body .list-group-item p
+{
+	display: inline-block;
+	width: auto;
+	font-size: 14px;
+	font-weight: 400;
+	color: #666;
+	margin: 0px;
+	padding: 0px;
+}
+
+.categories .panel .panel-body .list-group-item .edit, .categories .panel .panel-body .list-group-item .delete
+{
+	float: right;
+	font-size: 25px;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+.others .list-group-item
+{
+	border-radius: 0px;
+	border: none;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+.others .list-group-item p
+{
+	display: inline-block;
+	width: auto;
+	font-size: 14px;
+	font-weight: 400;
+	color: #666;
+	margin: 0px;
+	padding: 0px;
+}
+
+.others .list-group-item .edit, .others .list-group-item .delete
+{
+	float: right;
+	font-size: 25px;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+.nores
+{
+	font-weight: 400;
+	color: #666;
+	font-size: 16px;
+}
+
+.btn
+{ border-radius: 0px; }
+
+.modal, .modal-header, .modal-content
+{
+	border-radius: 0px;
+}
+
+.modal-header span
+{
+	font-size: 17px;
+	margin-top: 2px;
+}
+
+.modal .modal-title
+{
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.form-control
+{ border-radius: 0px; }
+
+.input-group-addon
+{
+	border-radius: 0px;
+	cursor: pointer;
+}
+
+.myupload
+{
+	border: dashed 2px #dddddd;
+	width: 90%;
+	display: block;
+	padding: 20px;
+}
+
+.myupload h1
+{
+	font-size: 2.2vw;
+	font-weight: 300;
+	color: #666;
+}
+
+.myupload input[type="file"]
+{ opacity: 0; }
+
+.img
+{ border: solid 5px #dddddd; }
+
+.img.active
+{ border: solid 5px #06F; }
+
+.floor
+{
+	border: solid 2px #dddddd;
+	padding: 10px 0px 10px 0px;
+	margin: 10px;
+}
+
+.floor p
+{
+	padding: 5px;
+	padding-left: 0px;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+.floor-title
+{
+	margin-bottom: 5px;
+	margin-left: 10px;
+	font-size: 24px;
+	font-weight: 300;
+	color: #333;
+}
+
+.floor-subtitle
+{
+	margin-top: 0px;
+	margin-left: 10px;
+	font-weight: 300;
+	color: #666;
+}
+
+.colorpicker
+{
+	margin: 15px;
+	margin-top: 5px;
+}
+
+.colorpicker .color
+{
+	height: 25px;
+	box-shadow: 0px 0px 1px 0px #FFF;
+	border: none;
+	cursor: pointer;
+}
+
+.colorpicker .color.active
+{ border: solid 2px #FFF; }
+
+.instructions .list-group-item
+{ border-radius: 0px; }
+
+.instructions .list-group-item h4
+{
+	font-weight: 400;
+	color: #333;
+	font-size: 14px;
+	padding: 5px;
+	border-bottom: solid 1px #dddddd;
+}
+
+.instructions .list-group-item p
+{
+	font-weight: 300;
+	color: #666;
+	font-size: 12px;
+	padding-left: 5px;
+}
+
+.main-title2
+{
+	font-size: 25px;
+	font-weight: 300;
+	color: #06F;
+	margin: 0px;
+	padding: 15px;
+	text-align: center;
+}
+
+.button
+{
+	text-align: center;
+	padding: 15px;
+	padding-top: 0px;
+}
+
+.selectcat .modal-header
+{
+	background: #FFF;
+	text-align: right;
+}
+
+.selectcat .modal-header button
+{
+	border: none;
+	padding: 0px;
+}
+
+.filter-title
+{
+	font-size: 20px;
+	font-weight: 300;
+	color: #333;
+	text-align: center;
+	margin: 10px;
+	margin-top: 0px;
+	padding-bottom: 10px;
+	border-bottom: solid 1px #dddddd;
+}
+
+.txtsearch
+{
+	font-size: 14px;
+	font-weight: 300;
+	color: #333;
+	padding: 20px;
+	text-align: center;
+}
+
+.results
+{ margin: 15px; }
+
+
+.results h3
+{
+	font-size: 18px;
+	font-weight: 300;
+	color: #333;
+	margin: 5px;
+	margin-left: 0px;
+	padding: 5px;
+	padding-left: 0px;
+}
+
+.results p
+{
+	font-size: 14px;
+	font-weight: 300;
+	color: #666;
+	cursor: pointer;
+}

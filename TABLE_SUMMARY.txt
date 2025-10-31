@@ -1,0 +1,429 @@
+DATABASE SCHEMA EXTRACTION SUMMARY
+==================================
+
+Source File: gates_smm March 3, 2020.sql
+Database: gates_smm3
+Extraction Date: 2025-10-31
+Total Tables Extracted: 312
+
+COMPLETE TABLE LIST (312 tables)
+=================================
+
+1. categories
+2. db_discount
+3. db_paymenttypes
+4. db_perhour
+5. db_sales
+6. db_settimeupload
+7. db_syncfilestat
+8. db_void
+9. dunn_aging
+10. dunn_soadate
+11. dunn_tblprevsoa
+12. dunn_tblsoa_dummy
+13. dunn_tblsoadetails
+14. dunn_tblsoadetails_copy
+15. dunn_tblsoaheader
+16. dunn_tblsoaheader_copy
+17. dunn_tblsoavacant
+18. emergency_details
+19. emergency_header
+20. event_attachments
+21. event_dayactivity
+22. event_facilities
+23. event_header
+24. event_manpower
+25. event_organizer
+26. event_paraphernalia
+27. event_personnel
+28. event_promotional
+29. event_requirements
+30. event_soundsystem
+31. fdb_discount
+32. fdb_not_paymenttypes
+33. fdb_paymenttypes
+34. fdb_perhour
+35. fdb_sales
+36. fdb_salesbymn
+37. fdb_void
+38. mall_directory_categories
+39. mall_directory_floors
+40. mall_directory_other_coordinates
+41. mall_directory_others
+42. mall_directory_recordid
+43. mall_directory_route
+44. mall_directory_shops
+45. mall_directory_shops_coordinates
+46. mall_directory_top_searches
+47. mall_setup
+48. pmls_android_location_task
+49. pmls_android_reffield
+50. pmls_android_reflocation
+51. pmls_android_refroom
+52. pmls_android_reftask
+53. pmls_android_user
+54. pmls_android_worker_task
+55. pmls_android_worker_task_history
+56. products
+57. ref_maintenancemain
+58. ref_maintenancemain_log
+59. ref_maintenancemain_sub
+60. refrecordid
+61. refrecordid_mall
+62. sdb_discount
+63. sdb_not_paymenttypes
+64. sdb_paymenttypes
+65. sdb_perhour
+66. sdb_sales
+67. sdb_salesbymn
+68. sdb_void
+69. setup_dateevic
+70. taskheader
+71. tbl_charges_detail
+72. tbl_day
+73. tbl_month
+74. tbl_tenantspayments
+75. tbl_visitor
+76. tblaccreditation
+77. tblaccreditationdocs
+78. tblaccreditationlogs
+79. tblasset_maintenance_d
+80. tblasset_maintenance_h
+81. tblchat_header
+82. tblchat_log
+83. tblchat_record
+84. tblcomplaints
+85. tblcomplaintscode
+86. tblcondition
+87. tblcontract
+88. tblforzreading
+89. tblgroups
+90. tbllog_sheet
+91. tblloggedmachine
+92. tbllogs_per_trans
+93. tbllogs_zaputility
+94. tblmachine
+95. tblmaintenance_category
+96. tblmaintenance_charges
+97. tblmaintenance_department
+98. tblmaintenance_equip
+99. tblmaintenance_houserules
+100. tblmaintenance_hrviolatorremarks
+101. tblmaintenance_hrviolatorremarks_attachment
+102. tblmaintenance_hrviolators
+103. tblmaintenance_hrviolators_copy
+104. tblmaintenance_hrviolatorsheader
+105. tblmaintenance_hrviolatorsheader_copy
+106. tblmaintenance_hrviolatorsresponse
+107. tblmaintenance_hrviolatorsresponse_attachment
+108. tblmaintenance_management
+109. tblmaintenance_setup
+110. tblmaintenance_tasklist
+111. tblmaintenance_workorder
+112. tblmaintenance_workorderlist
+113. tblmaintenance_workorderlist_copy
+114. tblref_amenities
+115. tblref_applicationrequirements
+116. tblref_applicationrequirements2
+117. tblref_apprlist
+118. tblref_apprlistperuser
+119. tblref_asset
+120. tblref_billperiod
+121. tblref_billperiod_copy
+122. tblref_billprofile
+123. tblref_bldg
+124. tblref_brgy
+125. tblref_budget
+126. tblref_cardtype
+127. tblref_charges
+128. tblref_charges_type
+129. tblref_citymun
+130. tblref_citymun_copy
+131. tblref_classification
+132. tblref_companyposition
+133. tblref_conbond
+134. tblref_consologs
+135. tblref_contract
+136. tblref_csv_upload
+137. tblref_dbupdatelogs
+138. tblref_employee
+139. tblref_event_facilities
+140. tblref_event_funit
+141. tblref_event_manpower
+142. tblref_event_organizer
+143. tblref_event_paraphernalia
+144. tblref_event_personnel
+145. tblref_facilities
+146. tblref_filters
+147. tblref_floor_lca
+148. tblref_floorsetup
+149. tblref_floorsetup_copy
+150. tblref_flr
+151. tblref_groupaccess
+152. tblref_groupaccess2
+153. tblref_hardcodedid
+154. tblref_industry
+155. tblref_investigator
+156. tblref_investigatorpos
+157. tblref_leasingsignatories
+158. tblref_location
+159. tblref_maintenancetasksetup
+160. tblref_maintenancetasksetup_stat
+161. tblref_mall
+162. tblref_mall_addcharges
+163. tblref_mallbankinfo
+164. tblref_mallcompany
+165. tblref_manpower
+166. tblref_merchandise_class
+167. tblref_merchandise_depa
+168. tblref_merchandisedep_cat
+169. tblref_meter
+170. tblref_meter_copy
+171. tblref_meterlogs
+172. tblref_meterlogs_copy
+173. tblref_msbilling
+174. tblref_msmaintenance_d
+175. tblref_msmaintenance_h
+176. tblref_operationalcharges
+177. tblref_organizerm
+178. tblref_paymentsched
+179. tblref_penalty
+180. tblref_pospaymenttype
+181. tblref_process_owner
+182. tblref_promotionalp
+183. tblref_province
+184. tblref_refcharges
+185. tblref_refcharges_copy
+186. tblref_region
+187. tblref_soundnper
+188. tblref_source
+189. tblref_sqm
+190. tblref_tenantsdocs
+191. tblref_type
+192. tblref_typeofbusiness
+193. tblref_typeofpermits
+194. tblref_unit
+195. tblref_unit_amenities
+196. tblref_unit_lca_dummy
+197. tblref_unitclass
+198. tblref_unitimage
+199. tblref_unitlocated
+200. tblref_unitplot
+201. tblref_unitplot2
+202. tblref_usergroupaccess
+203. tblref_utilrate
+204. tblref_wing
+205. tblref_workordermanual
+206. tblref_workorderremarks
+207. tblrefbank
+208. tblrefpaymenttype
+209. tblreqcategory
+210. tblreqtags
+211. tblsys_connsetup
+212. tblsys_setup
+213. tblsys_setup2
+214. tbltenant_chat
+215. tbltenant_chat_header
+216. tblterms
+217. tbltrans_amendment
+218. tbltrans_appid
+219. tbltrans_bevlist
+220. tbltrans_bevlogs
+221. tbltrans_chargeesca
+222. tbltrans_chargeesca_br
+223. tbltrans_chargeesca_br_history
+224. tbltrans_chargeesca_history
+225. tbltrans_closingmeeting
+226. tbltrans_company
+227. tbltrans_company_contact_person
+228. tbltrans_company_contact_person_contacts
+229. tbltrans_company_contacts
+230. tbltrans_company_owner_contacts
+231. tbltrans_companysig
+232. tbltrans_contractsigning
+233. tbltrans_demo
+234. tbltrans_eod
+235. tbltrans_escalation
+236. tbltrans_escalation_copy
+237. tbltrans_escalation_history
+238. tbltrans_events
+239. tbltrans_hierarchy
+240. tbltrans_hierarchy_reqgroup
+241. tbltrans_inquiry
+242. tbltrans_inquiry_copy
+243. tbltrans_inquiry_copy1
+244. tbltrans_inquiry_history
+245. tbltrans_inquiry_unit
+246. tbltrans_inquiry_unit_history
+247. tbltrans_items
+248. tbltrans_lca_plot
+249. tbltrans_leads
+250. tbltrans_leads_activities
+251. tbltrans_leads_attachments
+252. tbltrans_leads_awareness
+253. tbltrans_leads_closingmeeting
+254. tbltrans_leads_contractsigning
+255. tbltrans_leads_demo
+256. tbltrans_leads_referral
+257. tbltrans_leasingapplication
+258. tbltrans_leasingapplication_affiliated
+259. tbltrans_leasingapplication_contactperson
+260. tbltrans_leasingapplication_dp
+261. tbltrans_leasingapplication_owner_telno
+262. tbltrans_leasingapplicationreq
+263. tbltrans_mallconf
+264. tbltrans_memo
+265. tbltrans_memo_attachment
+266. tbltrans_paymentapplogs
+267. tbltrans_paymentapplogs_copy
+268. tbltrans_pdc
+269. tbltrans_processedbill
+270. tbltrans_processedsoa
+271. tbltrans_procharges
+272. tbltrans_procharges_history
+273. tbltrans_proposal
+274. tbltrans_proposal_history
+275. tbltrans_proposal_pass
+276. tbltrans_proposal_unit
+277. tbltrans_proposal_unit_history
+278. tbltrans_prospects
+279. tbltrans_referral
+280. tbltrans_remarks
+281. tbltrans_remarks_attach
+282. tbltrans_renew_contract
+283. tbltrans_renew_contract_charges
+284. tbltrans_renew_contract_charges_esca
+285. tbltrans_renew_contract_charges_esca_br
+286. tbltrans_renew_contract_esca
+287. tbltrans_renew_contract_unit
+288. tbltrans_reservation
+289. tbltrans_tenants
+290. tbltrans_tenants_copy
+291. tbltrans_tenants_dummy
+292. tbltrans_tenants_history
+293. tbltrans_tenantsrequest
+294. tbltrans_tenantsrequest_items
+295. tbltrans_tenantsrequest_visitor
+296. tbltrans_trade_contact_person
+297. tbltrans_trade_contact_person_list
+298. tbltrans_tradename
+299. tbltransaction
+300. tbltransaction_
+301. tbltransaction_1127
+302. tbltransaction_copy
+303. tbltransaction_soa
+304. tbltransleasing_contactlist
+305. tbltransleasing_inquiry
+306. tblunit_statuslogs
+307. tblunit_statuslogs_blanck
+308. tbluser
+309. tblxreadinglogs
+310. tblzreadinglogs
+311. trans_leads
+312. ttblref_refcitymun
+
+TABLES BY CATEGORY (inferred from naming)
+==========================================
+
+System/Config Tables (tblsys_*):
+- tblsys_connsetup
+- tblsys_setup
+- tblsys_setup2
+
+User Management:
+- tbluser
+- tblgroups
+- tblref_usergroupaccess
+
+Reference/Master Data (tblref_*, ref_*):
+- 90+ reference tables for configuration and lookup data
+
+Transaction Tables (tbltrans_*):
+- 60+ transaction-related tables
+- Company, tenant, inquiry, leasing, proposal, contract management
+
+Maintenance Tables (tblmaintenance_*):
+- Work orders, equipment, charges, HR violations
+- Asset maintenance tracking
+
+Event Management:
+- event_header
+- event_facilities
+- event_manpower
+- event_organizer
+- event_paraphernalia
+- event_personnel
+- event_promotional
+- event_requirements
+- event_soundsystem
+- event_attachments
+- event_dayactivity
+
+Financial/Sales (db_*, fdb_*, sdb_*):
+- Sales, discounts, payment types, voids, refunds
+- Separate tables for different mall divisions (db_, fdb_, sdb_)
+
+Property Management:
+- Tenant management (tbltrans_tenants)
+- Unit information (tblref_unit*)
+- Building/floor setup (tblref_bldg, tblref_floorsetup)
+
+Mail Directory:
+- mall_directory_* tables for directory management
+
+Android Mobile App (pmls_android_*):
+- Location, field, room, task, user tracking for mobile app
+
+FILES GENERATED
+===============
+
+1. TABLE_STRUCTURES.sql (224 KB, 6459 lines)
+   - Complete CREATE TABLE statements for all 312 tables
+   - Ready to use for Laravel migrations
+   - Schema only (no data inserts)
+   - Location: c:\Users\nuest\Documents\FINAL-PropertyManagementSystem\
+
+2. TABLE_SUMMARY.txt (this file)
+   - Summary of extraction
+   - Complete table list
+   - Notes for migration usage
+
+LARAVEL MIGRATION USAGE
+=======================
+
+To convert these CREATE TABLE statements to Laravel migrations:
+
+1. Extract individual table structures from TABLE_STRUCTURES.sql
+2. For each table, create a migration file like:
+   php artisan make:migration create_[table_name]_table
+
+3. Modify the migration's up() method using Schema builder
+
+Example conversion from SQL to Laravel:
+
+SQL:
+CREATE TABLE `categories` (
+  `categoryId` int(11) NOT NULL AUTO_INCREMENT,
+  `categoryName` varchar(100) NOT NULL,
+  PRIMARY KEY (`categoryId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+Laravel Migration:
+Schema::create('categories', function (Blueprint $table) {
+    $table->increments('categoryId');
+    $table->string('categoryName', 100);
+});
+
+4. For complex tables with foreign keys, indexes, and constraints,
+   reference the full CREATE TABLE syntax in TABLE_STRUCTURES.sql
+
+KEY NOTES
+=========
+
+1. Data inserts have been removed from all table definitions
+2. All CREATE TABLE statements include full schema details
+3. Primary keys are identified (PRIMARY KEY constraints)
+4. Indexes are preserved (KEY constraints)
+5. Default values and NULL constraints are included
+6. Charset: latin1 (consider migrating to utf8mb4 for Laravel)
+7. Engine: InnoDB (good for Laravel)

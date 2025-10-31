@@ -1,0 +1,1 @@
+start iexplore "http://localhost/mms_mall/autoscript/autosync.php"
