@@ -4,13 +4,17 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\LogOptions;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasRoles, LogsActivity;
 
     /**
      * The attributes that are mass assignable.
@@ -44,5 +48,49 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * Activity log configuration
+     */
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logOnly(['name', 'email'])
+            ->logOnlyDirty()
+            ->dontSubmitEmptyLogs();
+    }
+
+    /**
+     * Relationships
+     */
+    public function assignedInquiries(): HasMany
+    {
+        return $this->hasMany(Inquiry::class, 'assigned_to');
+    }
+
+    public function reviewedApplications(): HasMany
+    {
+        return $this->hasMany(LeaseApplication::class, 'reviewed_by');
+    }
+
+    public function issuedReceipts(): HasMany
+    {
+        return $this->hasMany(Receipt::class, 'issued_by');
+    }
+
+    public function assignedMaintenanceRequests(): HasMany
+    {
+        return $this->hasMany(MaintenanceRequest::class, 'assigned_to');
+    }
+
+    public function assignedWorkOrders(): HasMany
+    {
+        return $this->hasMany(WorkOrder::class, 'assigned_to');
+    }
+
+    public function waivedPenalties(): HasMany
+    {
+        return $this->hasMany(Penalty::class, 'waived_by');
     }
 }
