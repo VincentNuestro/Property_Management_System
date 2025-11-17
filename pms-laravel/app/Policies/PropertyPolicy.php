@@ -4,7 +4,7 @@ namespace App\Policies;
 
 use App\Models\Property;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
+use App\Enums\Permission;
 
 class PropertyPolicy
 {
@@ -13,7 +13,7 @@ class PropertyPolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return $user->can(Permission::PROPERTIES_VIEW);
     }
 
     /**
@@ -21,7 +21,7 @@ class PropertyPolicy
      */
     public function view(User $user, Property $property): bool
     {
-        return false;
+        return $user->can(Permission::PROPERTIES_VIEW);
     }
 
     /**
@@ -29,7 +29,7 @@ class PropertyPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return $user->can(Permission::PROPERTIES_CREATE);
     }
 
     /**
@@ -37,7 +37,7 @@ class PropertyPolicy
      */
     public function update(User $user, Property $property): bool
     {
-        return false;
+        return $user->can(Permission::PROPERTIES_EDIT);
     }
 
     /**
@@ -45,7 +45,12 @@ class PropertyPolicy
      */
     public function delete(User $user, Property $property): bool
     {
-        return false;
+        // Check if property has related data
+        if ($property->units()->count() > 0) {
+            return false; // Cannot delete property with units
+        }
+
+        return $user->can(Permission::PROPERTIES_DELETE);
     }
 
     /**
@@ -53,7 +58,7 @@ class PropertyPolicy
      */
     public function restore(User $user, Property $property): bool
     {
-        return false;
+        return $user->can(Permission::PROPERTIES_EDIT);
     }
 
     /**
@@ -61,6 +66,6 @@ class PropertyPolicy
      */
     public function forceDelete(User $user, Property $property): bool
     {
-        return false;
+        return $user->can(Permission::PROPERTIES_DELETE);
     }
 }
