@@ -15,6 +15,83 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    @can('properties.view')
+                    <x-dropdown align="top" width="48">
+                        <x-slot name="trigger">
+                            <button class="inline-flex items-center px-3 py-2 text-sm font-medium leading-5 text-gray-700 hover:text-gray-900 focus:outline-none transition duration-150 ease-in-out">
+                                Properties
+                                <svg class="ms-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                            </button>
+                        </x-slot>
+                        <x-slot name="content">
+                            <x-dropdown-link :href="route('properties.index')">All Properties</x-dropdown-link>
+                            <x-dropdown-link :href="route('units.index')">Units</x-dropdown-link>
+                        </x-slot>
+                    </x-dropdown>
+                    @endcan
+
+                    @can('tenants.view')
+                    <x-dropdown align="top" width="48">
+                        <x-slot name="trigger">
+                            <button class="inline-flex items-center px-3 py-2 text-sm font-medium leading-5 text-gray-700 hover:text-gray-900 focus:outline-none transition duration-150 ease-in-out">
+                                Tenants
+                                <svg class="ms-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                            </button>
+                        </x-slot>
+                        <x-slot name="content">
+                            <x-dropdown-link :href="route('tenants.index')">All Tenants</x-dropdown-link>
+                            <x-dropdown-link :href="route('companies.index')">Companies</x-dropdown-link>
+                        </x-slot>
+                    </x-dropdown>
+                    @endcan
+
+                    @can('lease_contracts.view')
+                    <x-dropdown align="top" width="48">
+                        <x-slot name="trigger">
+                            <button class="inline-flex items-center px-3 py-2 text-sm font-medium leading-5 text-gray-700 hover:text-gray-900 focus:outline-none transition duration-150 ease-in-out">
+                                Leases
+                                <svg class="ms-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                            </button>
+                        </x-slot>
+                        <x-slot name="content">
+                            <x-dropdown-link :href="route('inquiries.index')">Inquiries</x-dropdown-link>
+                            <x-dropdown-link :href="route('reservations.index')">Reservations</x-dropdown-link>
+                            <x-dropdown-link :href="route('lease-applications.index')">Applications</x-dropdown-link>
+                            <x-dropdown-link :href="route('lease-contracts.index')">Contracts</x-dropdown-link>
+                        </x-slot>
+                    </x-dropdown>
+                    @endcan
+
+                    @can('invoices.view')
+                    <x-dropdown align="top" width="48">
+                        <x-slot name="trigger">
+                            <button class="inline-flex items-center px-3 py-2 text-sm font-medium leading-5 text-gray-700 hover:text-gray-900 focus:outline-none transition duration-150 ease-in-out">
+                                Billing
+                                <svg class="ms-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                            </button>
+                        </x-slot>
+                        <x-slot name="content">
+                            <x-dropdown-link :href="route('invoices.index')">Invoices</x-dropdown-link>
+                            <x-dropdown-link :href="route('payments.index')">Payments</x-dropdown-link>
+                            @can('charge_types.view')
+                            <x-dropdown-link :href="route('charge-types.index')">Charge Types</x-dropdown-link>
+                            @endcan
+                        </x-slot>
+                    </x-dropdown>
+                    @endcan
+
+                    @can('maintenance_requests.view')
+                    <x-nav-link :href="route('maintenance-requests.index')" :active="request()->routeIs('maintenance-requests.*')">
+                        Maintenance
+                    </x-nav-link>
+                    @endcan
+
+                    @can('reports.view')
+                    <x-nav-link :href="route('reports.index')" :active="request()->routeIs('reports.*')">
+                        Reports
+                    </x-nav-link>
+                    @endcan
                 </div>
             </div>
 
