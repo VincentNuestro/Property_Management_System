@@ -10,6 +10,8 @@
         'indigo' => 'bg-indigo-100 text-indigo-800',
         'purple' => 'bg-purple-100 text-purple-800',
         'pink' => 'bg-pink-100 text-pink-800',
+        'orange' => 'bg-orange-100 text-orange-800',
+        'cyan' => 'bg-cyan-100 text-cyan-800',
     ];
 
     $colorClass = $colors[$color] ?? $colors['gray'];

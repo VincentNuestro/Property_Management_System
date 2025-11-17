@@ -23,7 +23,7 @@ enum MaintenancePriority: string
     {
         return match($this) {
             self::LOW => 'gray',
-            self::MEDIUM => 'blue',
+            self::MEDIUM => 'yellow',
             self::HIGH => 'orange',
             self::URGENT => 'red',
         };

@@ -6,12 +6,14 @@ use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\LeaseApplicationController;
 use App\Http\Controllers\LeaseContractController;
+use App\Http\Controllers\MaintenanceRequestController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\TenantController;
 use App\Http\Controllers\UnitController;
+use App\Http\Controllers\WorkOrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -70,5 +72,21 @@ Route::post('lease-contracts/{lease_contract}/renew', [LeaseContractController::
 Route::get('lease-contracts/{lease_contract}/download', [LeaseContractController::class, 'downloadContract'])->name('lease-contracts.download')->middleware(['auth', 'verified']);
 Route::post('lease-contracts/{lease_contract}/add-charge', [LeaseContractController::class, 'addCharge'])->name('lease-contracts.add-charge')->middleware(['auth', 'verified']);
 Route::get('lease-contracts/units/available', [LeaseContractController::class, 'getAvailableUnits'])->name('lease-contracts.get-available-units')->middleware(['auth', 'verified']);
+
+// Maintenance Request routes
+Route::resource('maintenance-requests', MaintenanceRequestController::class)->middleware(['auth', 'verified']);
+Route::post('maintenance-requests/{maintenance_request}/assign', [MaintenanceRequestController::class, 'assign'])->name('maintenance-requests.assign')->middleware(['auth', 'verified']);
+Route::post('maintenance-requests/{maintenance_request}/start', [MaintenanceRequestController::class, 'start'])->name('maintenance-requests.start')->middleware(['auth', 'verified']);
+Route::post('maintenance-requests/{maintenance_request}/complete', [MaintenanceRequestController::class, 'complete'])->name('maintenance-requests.complete')->middleware(['auth', 'verified']);
+Route::post('maintenance-requests/{maintenance_request}/cancel', [MaintenanceRequestController::class, 'cancel'])->name('maintenance-requests.cancel')->middleware(['auth', 'verified']);
+Route::post('maintenance-requests/{maintenance_request}/create-work-order', [MaintenanceRequestController::class, 'createWorkOrder'])->name('maintenance-requests.create-work-order')->middleware(['auth', 'verified']);
+
+// Work Order routes
+Route::resource('work-orders', WorkOrderController::class)->middleware(['auth', 'verified']);
+Route::post('work-orders/{work_order}/schedule', [WorkOrderController::class, 'schedule'])->name('work-orders.schedule')->middleware(['auth', 'verified']);
+Route::post('work-orders/{work_order}/start', [WorkOrderController::class, 'start'])->name('work-orders.start')->middleware(['auth', 'verified']);
+Route::post('work-orders/{work_order}/complete', [WorkOrderController::class, 'complete'])->name('work-orders.complete')->middleware(['auth', 'verified']);
+Route::post('work-orders/{work_order}/cancel', [WorkOrderController::class, 'cancel'])->name('work-orders.cancel')->middleware(['auth', 'verified']);
+Route::post('work-orders/{work_order}/put-on-hold', [WorkOrderController::class, 'putOnHold'])->name('work-orders.put-on-hold')->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
