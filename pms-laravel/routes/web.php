@@ -10,6 +10,7 @@ use App\Http\Controllers\MaintenanceRequestController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\TenantController;
 use App\Http\Controllers\UnitController;
@@ -88,5 +89,22 @@ Route::post('work-orders/{work_order}/start', [WorkOrderController::class, 'star
 Route::post('work-orders/{work_order}/complete', [WorkOrderController::class, 'complete'])->name('work-orders.complete')->middleware(['auth', 'verified']);
 Route::post('work-orders/{work_order}/cancel', [WorkOrderController::class, 'cancel'])->name('work-orders.cancel')->middleware(['auth', 'verified']);
 Route::post('work-orders/{work_order}/put-on-hold', [WorkOrderController::class, 'putOnHold'])->name('work-orders.put-on-hold')->middleware(['auth', 'verified']);
+
+// Reports routes
+Route::prefix('reports')->middleware(['auth', 'verified'])->name('reports.')->group(function () {
+    Route::get('/', [ReportController::class, 'index'])->name('index');
+    Route::get('/occupancy', [ReportController::class, 'occupancy'])->name('occupancy');
+    Route::get('/rent-roll', [ReportController::class, 'rentRoll'])->name('rent-roll');
+    Route::get('/aging', [ReportController::class, 'aging'])->name('aging');
+    Route::get('/collections', [ReportController::class, 'collections'])->name('collections');
+    Route::get('/financial-summary', [ReportController::class, 'financialSummary'])->name('financial-summary');
+
+    // Export routes
+    Route::get('/occupancy/export', [ReportController::class, 'exportOccupancy'])->name('occupancy.export');
+    Route::get('/rent-roll/export', [ReportController::class, 'exportRentRoll'])->name('rent-roll.export');
+    Route::get('/aging/export', [ReportController::class, 'exportAging'])->name('aging.export');
+    Route::get('/collections/export', [ReportController::class, 'exportCollections'])->name('collections.export');
+    Route::get('/financial-summary/export', [ReportController::class, 'exportFinancialSummary'])->name('financial-summary.export');
+});
 
 require __DIR__.'/auth.php';
