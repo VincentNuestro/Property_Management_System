@@ -2,10 +2,14 @@
 
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\LeaseApplicationController;
+use App\Http\Controllers\LeaseContractController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\TenantController;
 use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +31,25 @@ Route::resource('units', UnitController::class)->middleware(['auth', 'verified']
 Route::resource('companies', CompanyController::class)->middleware(['auth', 'verified']);
 Route::resource('tenants', TenantController::class)->middleware(['auth', 'verified']);
 
+// Inquiry routes
+Route::resource('inquiries', InquiryController::class)->middleware(['auth', 'verified']);
+Route::post('inquiries/{inquiry}/convert-to-reservation', [InquiryController::class, 'convertToReservation'])->name('inquiries.convert-to-reservation')->middleware(['auth', 'verified']);
+
+// Reservation routes
+Route::resource('reservations', ReservationController::class)->middleware(['auth', 'verified']);
+Route::post('reservations/{reservation}/confirm', [ReservationController::class, 'confirm'])->name('reservations.confirm')->middleware(['auth', 'verified']);
+Route::post('reservations/{reservation}/cancel', [ReservationController::class, 'cancel'])->name('reservations.cancel')->middleware(['auth', 'verified']);
+Route::post('reservations/{reservation}/convert-to-application', [ReservationController::class, 'convertToApplication'])->name('reservations.convert-to-application')->middleware(['auth', 'verified']);
+Route::get('reservations/units/property', [ReservationController::class, 'getUnits'])->name('reservations.get-units')->middleware(['auth', 'verified']);
+
+// Lease Application routes
+Route::resource('lease-applications', LeaseApplicationController::class)->middleware(['auth', 'verified']);
+Route::post('lease-applications/{lease_application}/submit', [LeaseApplicationController::class, 'submit'])->name('lease-applications.submit')->middleware(['auth', 'verified']);
+Route::post('lease-applications/{lease_application}/review', [LeaseApplicationController::class, 'review'])->name('lease-applications.review')->middleware(['auth', 'verified']);
+Route::post('lease-applications/{lease_application}/approve', [LeaseApplicationController::class, 'approve'])->name('lease-applications.approve')->middleware(['auth', 'verified']);
+Route::post('lease-applications/{lease_application}/reject', [LeaseApplicationController::class, 'reject'])->name('lease-applications.reject')->middleware(['auth', 'verified']);
+Route::post('lease-applications/{lease_application}/convert-to-contract', [LeaseApplicationController::class, 'convertToContract'])->name('lease-applications.convert-to-contract')->middleware(['auth', 'verified']);
+
 // Invoice routes
 Route::resource('invoices', InvoiceController::class)->middleware(['auth', 'verified']);
 Route::post('invoices/{invoice}/send', [InvoiceController::class, 'send'])->name('invoices.send')->middleware(['auth', 'verified']);
@@ -38,5 +61,14 @@ Route::resource('payments', PaymentController::class)->middleware(['auth', 'veri
 Route::get('payments/{payment}/allocate', [PaymentController::class, 'allocate'])->name('payments.allocate')->middleware(['auth', 'verified']);
 Route::post('payments/{payment}/allocate', [PaymentController::class, 'storeAllocation'])->name('payments.store-allocation')->middleware(['auth', 'verified']);
 Route::get('payments/{payment}/receipt', [PaymentController::class, 'downloadReceipt'])->name('payments.receipt')->middleware(['auth', 'verified']);
+
+// Lease Contract routes
+Route::resource('lease-contracts', LeaseContractController::class)->middleware(['auth', 'verified']);
+Route::post('lease-contracts/{lease_contract}/activate', [LeaseContractController::class, 'activate'])->name('lease-contracts.activate')->middleware(['auth', 'verified']);
+Route::post('lease-contracts/{lease_contract}/terminate', [LeaseContractController::class, 'terminate'])->name('lease-contracts.terminate')->middleware(['auth', 'verified']);
+Route::post('lease-contracts/{lease_contract}/renew', [LeaseContractController::class, 'renew'])->name('lease-contracts.renew')->middleware(['auth', 'verified']);
+Route::get('lease-contracts/{lease_contract}/download', [LeaseContractController::class, 'downloadContract'])->name('lease-contracts.download')->middleware(['auth', 'verified']);
+Route::post('lease-contracts/{lease_contract}/add-charge', [LeaseContractController::class, 'addCharge'])->name('lease-contracts.add-charge')->middleware(['auth', 'verified']);
+Route::get('lease-contracts/units/available', [LeaseContractController::class, 'getAvailableUnits'])->name('lease-contracts.get-available-units')->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
